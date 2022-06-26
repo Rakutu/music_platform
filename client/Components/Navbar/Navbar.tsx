@@ -1,24 +1,63 @@
 import React from 'react';
 import Link from "next/link";
-import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import {Trans} from "@lingui/react";
+import {NavItem} from "./navbar.types";
+import {navbarMenu} from "./navbar.constants";
+import {Icon} from "@mui/material";
+import styles from './navbar.module.scss';
 
 
-export const Navbar = (props) => {
+type MenuState = [ open: boolean, setOpen:  React.Dispatch<React.SetStateAction<boolean>>];
+
+type RenderNavbarItem = (item: NavItem) => JSX.Element;
+
+type RenderOpenMenuButton = (state: MenuState) => JSX.Element;
+
+const renderNavbarItem: RenderNavbarItem = ({ href, label, icon}) => (
+    <li>
+        <Link href={href}>
+            <a className={styles.item}>
+                <p>
+                    <Trans id={label} />
+                </p>
+                <Icon>{icon}</Icon>
+            </a>
+        </Link>
+    </li>
+)
+
+const renderOpenMenuButton: RenderOpenMenuButton = ([ open, setOpen ]) => (
+    open
+        ? <button
+            className={styles.button}
+            onClick={() => setOpen(open => !open)}
+        >
+            <Icon>
+                menu_open
+            </Icon>
+        </button>
+        : <button
+            className={styles.button}
+            onClick={() => setOpen(open => !open)}
+        >
+            <Icon>
+                more_vert
+            </Icon>
+        </button>
+)
+
+export const Navbar = () => {
+    const openState = React.useState<boolean>(true)
+    const menuItems = navbarMenu.map(renderNavbarItem);
+
     return (
-        <ul>
-            <li>
-                <Link href={'favorites'}>
-                    <a>
-                        <p>
-                            <Trans id="components.navbar@my_music" />
-                        </p>
-                        <LibraryMusicIcon
-                            color={'action'}
-                        />
-                    </a>
-                </Link>
-            </li>
-        </ul>
+        <div className={styles.navbar}>
+            <div>
+                {renderOpenMenuButton(openState)}
+            </div>
+            <ul className={styles.list}>
+                {menuItems}
+            </ul>
+        </div>
     );
-}
+};
