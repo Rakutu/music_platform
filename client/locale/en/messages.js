@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"components.navbar@my_music":"My music","pages.start_to_listen":"pages.start_to_listen","pages.title":"pages.title"}};
