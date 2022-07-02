@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:{"components.navbar@my_music":"Моя музыка","pages.start_to_listen":"pages.start_to_listen","pages.title":"pages.title"}};
+/*eslint-disable*/module.exports={messages:{"components.navbar@artists":"Исполнители","components.navbar@favorites":"Избранное","components.navbar@my_music":"Моя музыка","components.navbar@playlists":"Плейлисты","components.navbar@popular":"Популярное","pages.start_to_listen":"Начать слушать","pages.title":"Лучшая музыка"}};

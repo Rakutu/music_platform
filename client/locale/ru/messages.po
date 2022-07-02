@@ -13,9 +13,25 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: Components/Navbar/Navbar.tsx:21
+#~ msgid "components.navbar@artists"
+#~ msgstr "Исполнители"
+
+#: Components/Navbar/Navbar.tsx:21
+#~ msgid "components.navbar@favorites"
+#~ msgstr "Избранное"
+
 #: Components/Navbar/Navbar.tsx:14
-msgid "components.navbar@my_music"
-msgstr "Моя музыка"
+#~ msgid "components.navbar@my_music"
+#~ msgstr "Моя музыка"
+
+#: Components/Navbar/Navbar.tsx:21
+#~ msgid "components.navbar@playlists"
+#~ msgstr "Плейлисты"
+
+#: Components/Navbar/Navbar.tsx:21
+#~ msgid "components.navbar@popular"
+#~ msgstr "Популярное"
 
 #: pages/index.tsx:20
 msgid "pages.start_to_listen"
